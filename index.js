@@ -22,7 +22,7 @@ let secondImgElements = document.getElementsByClassName("img2");
 // Generate random numbers between 1 and 6
 var randomNumber1 = Math.floor(Math.random() * 6) + 1;
 var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-
+changeH1();
 // Construct random image filenames
 let imgRandom1 = "./images/dice" + randomNumber1 + ".png";
 let imgRandom2 = "./images/dice" + randomNumber2 + ".png";
@@ -36,4 +36,26 @@ for (let i = 0; i < firstImgElements.length; i++) {
 for (let i = 0; i < secondImgElements.length; i++) {
   secondImgElements[i].setAttribute("src", imgRandom2);
 }
+
+
+
+
+
+
+function changeH1 (){
+    const refreshMe = document.querySelector("h1");
+    
+    if(randomNumber1 > randomNumber2){
+        
+        refreshMe.innerHTML = "Player 1 Wins";
+    }
+    else if(randomNumber2 > randomNumber1){
+        refreshMe.innerHTML = "Player 2 Wins";
+    }
+    else {
+        
+        refreshMe.innerHTML = "Draw";
+    }
+  
+};
 
