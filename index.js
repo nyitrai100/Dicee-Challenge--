@@ -6,9 +6,25 @@ var randomNumber1 = Math.floor(Math.random() * 6) + 1;
 var randomNumber2 = Math.floor(Math.random() * 6) + 1; 
 let imgRandom1 = "./images/dice" + randomNumber1 + ".png";
 let imgRandom2 = "./images/dice" + randomNumber2 + ".png";
-changeH1();
+
 firstImgElements.setAttribute("src", imgRandom1);
 secondImgElements.setAttribute("src", imgRandom2)
+
+
+const refreshMe = document.querySelector("h1");
+    
+if(randomNumber1 > randomNumber2){
+    
+    refreshMe.innerHTML = "Player 1 Wins";
+}
+else if(randomNumber2 > randomNumber1){
+    refreshMe.innerHTML = "Player 2 Wins";
+}
+else {
+    
+    refreshMe.innerHTML = "Draw";
+}
+
 
 // First solution end
 
@@ -36,26 +52,26 @@ secondImgElements.setAttribute("src", imgRandom2)
 //   secondImgElements[i].setAttribute("src", imgRandom2);
 // }
 
-// second solution end
 
 
 
 
-function changeH1 (){
-    const refreshMe = document.querySelector("h1");
+
+// function changeH1 (){
+//     const refreshMe = document.querySelector("h1");
     
-    if(randomNumber1 > randomNumber2){
+//     if(randomNumber1 > randomNumber2){
         
-        refreshMe.innerHTML = "Player 1 Wins";
-    }
-    else if(randomNumber2 > randomNumber1){
-        refreshMe.innerHTML = "Player 2 Wins";
-    }
-    else {
+//         refreshMe.innerHTML = "Player 1 Wins";
+//     }
+//     else if(randomNumber2 > randomNumber1){
+//         refreshMe.innerHTML = "Player 2 Wins";
+//     }
+//     else {
         
-        refreshMe.innerHTML = "Draw";
-    }
+//         refreshMe.innerHTML = "Draw";
+//     }
   
-};
+// };
 
-
+// second solution end
